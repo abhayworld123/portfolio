@@ -1,0 +1,64 @@
+ABHISHEK CHATURVEDI
+Full Stack Developer
+
+CONTACT INFORMATION
+Email: abhay.chaturvedius@gmail.com
+Phone: +1 (555) 123-4567
+Location: Charlotte, NC
+LinkedIn: linkedin.com/in/abhishek-chaturvedi
+GitHub: github.com/abhishek-chaturvedi
+
+PROFESSIONAL SUMMARY
+Experienced Full Stack Developer with hands-on skills in Java, JavaScript, mobile, and web development frameworks. Specializes in delivering complex, business-critical projects across Financial, Telecom, Retail, and Life Sciences domains. Proven ability to assist in IT modernization and cloud migration strategies.
+
+TECHNICAL SKILLS
+Frontend: React, Next.js, JavaScript, TypeScript, Angular 12, HTML5, CSS3, Bootstrap, React Native, Ionic, Material UI, Redux
+Backend: Java, Spring Boot, Node.js, NestJS, Python, MongoDB, PostgreSQL, MySQL, Firebase, REST APIs, gRPC, WebSockets
+Tools & Cloud: AWS, Azure, Google Cloud, Docker, Kubernetes, Git, GitHub, Bitbucket, Jenkins, Webpack, Jest, Cypress
+Design & Mobile: Figma, UI/UX Design, React Native, Ionic, Android, iOS, Mobile Development, Prototyping
+
+PROFESSIONAL EXPERIENCE
+
+Senior Software Engineer | Bank of America | February 2024 - March 2025
+• Developed bank's internal web-based application for performance monitoring and reporting with approval mechanisms
+• Designed and implemented accessible Next.js, React JS and TypeScript components for multiple screens
+• Developed and integrated REST APIs in Java Spring Boot from multiple third-party sources
+• Implemented roles mechanism to manage user approval access and authorization
+• Ensured 100% AA compliance and WCAG 2.2 accessibility standards
+• Managed deployments using Ansible and code pipelines, reducing manual errors
+
+Senior Software Engineer | CM Alliance | May 2023 - January 2024
+• Created and designed MongoDB Schema for storing user profiles and event data
+• Developed REST APIs using Node.js and MongoDB to serve data to frontend and metaverse view
+• Integrated Web3 API with Node.js for enhanced functionality
+• Designed and constructed frontend using React JS and Material UI framework
+• Implemented RBAC by assigning different roles and restricting access based on user roles
+• Containerized application through Docker and Kubernetes for efficient deployment
+
+System Integration Senior Specialist | NTT Data Global US | February 2022 - April 2023
+• Collaborated with designers to create clean interfaces and intuitive interactions
+• Led team to deliver complex design projects for corporate clients
+• Developed applications using HTML5, CSS3, Bootstrap, jQuery, React JS, NextJS, Node JS
+• Applied optimization techniques to reduce page size and load times
+• Used WebSockets API for real-time communication
+• Ensured accessibility (A11Y) compliance across all screens
+
+Senior Software Engineer | Tech Mahindra | June 2019 - February 2022
+• Developed mobile and web applications using Ionic, React JS, Angular, and Cordova
+• Led development of new features and UI components ensuring accessibility compliance
+• Deployed applications to both iOS and Android platforms via App Store and Play Store
+• Developed and maintained web and mobile applications for Telecom and E-commerce sectors
+• Implemented real-time communication using WebSockets API
+
+EDUCATION
+Master of Technology in Computer Science and Engineering
+DIT, Uttarakhand Technical University, Dehradun | 2012 - 2014
+
+CERTIFICATIONS
+• Blockchain Developer Nanodegree - Udacity (2023)
+• AWS Certified Cloud Practitioner - Amazon Web Services (2023)
+
+PROJECTS
+• Task Management App: Full-stack web application with real-time collaboration features
+• Data Dashboard: Interactive dashboard for data visualization and analysis
+• Script Suite: Collection of Python automation scripts for data processing and API integrations
