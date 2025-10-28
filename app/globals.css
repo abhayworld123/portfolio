@@ -422,7 +422,18 @@ section {
   transition: filter 0.25s ease;
 }
 
-.image-wrapper:hover img {
+.cropped-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%; /* This crops from bottom, keeping top centered */
+  border-radius: 4px;
+  filter: grayscale(100%);
+  transition: filter 0.25s ease;
+}
+
+.image-wrapper:hover img,
+.image-wrapper:hover .cropped-image {
   filter: grayscale(0%);
 }
 

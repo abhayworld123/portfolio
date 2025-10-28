@@ -7,7 +7,7 @@ export default function Hero() {
   useEffect(() => {
     // Typing Animation
     const typedText = document.getElementById('typed-text');
-    const text = "I build things for the web.";
+    const text = "I build things for the web & mobile.";
     let index = 0;
 
     function typeWriter() {
@@ -27,7 +27,7 @@ export default function Hero() {
     <section id="home">
       <div className="hero-content">
         <p className="greeting">Hi, my name is</p>
-        <h1 className="name">Abhishek.</h1>
+        <h1 className="name">Abhay</h1>
         <h2 className="title">
           <span id="typed-text"></span>
           <span id="cursor">|</span>

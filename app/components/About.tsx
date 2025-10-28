@@ -7,7 +7,7 @@ export default function About() {
         <div className="about-grid">
           <div className="about-text">
             <p>
-              Hello! I'm Abhishek, an experienced Fullstack Developer with expertise in delivering complex, 
+              Hello! I'm Abhay Chaturvedi, an experienced Fullstack Developer with expertise in delivering complex, 
               business-critical projects for clients across Financial, Telecom, Retail, and Life Sciences domains.
             </p>
             <p>
@@ -26,7 +26,7 @@ export default function About() {
           </div>
           <div className="about-image">
             <div className="image-wrapper">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="John Doe" />
+              <img src="/images/sittingAb.png" alt="Abhay Chaturvedi" className="cropped-image" />
               <div className="image-overlay"></div>
             </div>
           </div>
