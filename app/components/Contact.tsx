@@ -220,7 +220,8 @@ export default function Contact() {
 
       // Validate environment variables
       if (!serviceId || !templateId || !publicKey) {
-        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+        console.warn('EmailJS not configured. Please set up environment variables.');
+        throw new Error('Email service is not configured yet. Please contact me directly at abhayworld123@zohomail.in or via WhatsApp.');
       }
 
       // Initialize EmailJS with public key
@@ -232,7 +233,7 @@ export default function Contact() {
         user_email: data.email,
         user_subject: data.subject,
         user_message: data.message,
-        to_email: 'abhayworld123@zohomail.in', // Your email address
+        // to_email: 'abhayworld123@gmail.com', // Your email address
         from_name: data.name,
         reply_to: data.email
       };
@@ -244,7 +245,7 @@ export default function Contact() {
         return Promise.resolve();
       } catch (error) {
         console.error('EmailJS error:', error);
-        throw new Error('Failed to send email. Please try again later.');
+        throw new Error('Failed to send email. Please contact me directly at abhayworld123@zohomail.in or via WhatsApp.');
       }
     }
   }, [lastSubmissionTime]);

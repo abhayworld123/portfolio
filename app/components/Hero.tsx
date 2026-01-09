@@ -45,10 +45,6 @@ export default function Hero() {
           </ResumeDownload>
         </div>
       </div>
-      <div className="scroll-indicator">
-        <div className="scroll-text">Scroll Down</div>
-        <div className="scroll-line"></div>
-      </div>
     </section>
   );
 }

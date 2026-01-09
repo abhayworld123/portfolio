@@ -26,7 +26,7 @@ export default function About() {
           </div>
           <div className="about-image">
             <div className="image-wrapper">
-              <img src="/images/sittingAb.png" alt="Abhay Chaturvedi" className="cropped-image" />
+              <img src="/images/noch.png" alt="Abhay Chaturvedi" className="cropped-image" />
               <div className="image-overlay"></div>
             </div>
           </div>

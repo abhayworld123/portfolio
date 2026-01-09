@@ -1,48 +1,63 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ResumeDownload from './ResumeDownload';
 
-interface NavProps {
-    currentPage?: string;
-}
-
-export default function Nav({ currentPage = '' }: NavProps) {
+export default function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const isHome = currentPage === 'home';
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
     return (
-        <nav id="nav">
+        <nav id="nav" className={scrolled ? 'scrolled' : ''}>
             <div className="nav-content">
                 <div className="logo">
-                    <Link href="/">AB</Link>
+                    <Link href="/" onClick={closeMenu}>
+                        <span className="logo-bracket">{'<'}</span>
+                        <span className="logo-text">AC</span>
+                        <span className="logo-bracket">{'/>'}</span>
+                    </Link>
                 </div>
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <ol>
-                        <li><Link href={isHome ? "#about" : "/about"} data-number="01">About</Link></li>
-                        <li><Link href={isHome ? "#experience" : "/experience"} data-number="02">Experience</Link></li>
-                        <li><Link href={isHome ? "#skills" : "/skills"} data-number="03">Skills</Link></li>
-                        <li><Link href={isHome ? "#education" : "/education"} data-number="04">Education</Link></li>
-                        <li><Link href={isHome ? "#projects" : "/projects"} data-number="05">Work</Link></li>
-                        <li><Link href={isHome ? "#contact" : "/contact"} data-number="06">Contact</Link></li>
+                        <li><Link href="#about" onClick={closeMenu}><span className="nav-number">01.</span>About</Link></li>
+                        <li><Link href="#experience" onClick={closeMenu}><span className="nav-number">02.</span>Experience</Link></li>
+                        <li><Link href="#skills" onClick={closeMenu}><span className="nav-number">03.</span>Skills</Link></li>
+                        <li><Link href="#projects" onClick={closeMenu}><span className="nav-number">04.</span>Work</Link></li>
+                        <li><Link href="#contact" onClick={closeMenu}><span className="nav-number">05.</span>Contact</Link></li>
                     </ol>
                     <div className="resume-link">
-                        <ResumeDownload className="resume-btn">
+                        <ResumeDownload className="nav-resume-btn">
                             Resume
                         </ResumeDownload>
                     </div>
                 </div>
-                <div className="hamburger" onClick={toggleMenu}>
+                <button 
+                    className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+                    onClick={toggleMenu}
+                    aria-label="Toggle menu"
+                >
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
     );

@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "firebase:serve": "firebase serve",
+    "firebase:deploy": "firebase deploy",
+    "firebase:deploy:preview": "firebase hosting:channel:deploy preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -17,6 +20,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "firebase-tools": "^13.0.0",
     "typescript": "^5"
   }
 }

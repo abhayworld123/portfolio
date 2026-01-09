@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "John Doe - Python Developer",
-  description: "Portfolio of John Doe, a Python developer specializing in web applications and data science.",
+  title: "Abhay Chaturvedi - Full Stack Developer",
+  description: "Portfolio of Abhay Chaturvedi,   developer specializing in web applications and data science.",
+  keywords: "Full Stack Developer, React, Node.js, JavaScript, Portfolio",
+  openGraph: {
+    title: "Abhay Chaturvedi - Full Stack Developer",
+    description: "Portfolio of Abhay Chaturvedi, Full Stack Developer specializing in web applications and data science.",
+    images: ["/noch.png"],
+  },
 };
 
 export default function RootLayout({

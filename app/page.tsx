@@ -34,7 +34,7 @@ export default function Home() {
         onToggle={toggleAnimation} 
       />
 
-      <Nav currentPage="home" />
+      <Nav />
       
       <WhatsAppButton />
       

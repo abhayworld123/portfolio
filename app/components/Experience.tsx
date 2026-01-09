@@ -1,89 +1,122 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Experience() {
-  useEffect(() => {
-    // Experience tabs
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const experienceItems = document.querySelectorAll('.experience-item');
+  const [activeTab, setActiveTab] = useState('boa');
 
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabBtns.forEach(tab => tab.classList.remove('active'));
-        experienceItems.forEach(item => item.classList.remove('active'));
+  const experiences = [
+    {
+      id: 'boa',
+      company: 'Bank of America',
+      role: 'Sr. Software Engineer',
+      period: 'Feb 2024 - Mar 2025',
+      location: 'Charlotte, NC',
+      achievements: [
+        'Developed banks internal web-based application for performance monitoring and reporting with approval mechanisms',
+        'Designed and implemented accessible Next.js, React JS and TypeScript components for multiple screens',
+        'Developed and integrated REST APIs in Java Spring Boot from multiple third-party sources',
+        'Implemented roles mechanism to manage user approval access and authorization',
+        'Ensured 100% AA compliance and WCAG 2.2 accessibility standards',
+        'Managed deployments using Ansible and code pipelines, reducing manual errors'
+      ],
+      tech: ['Next.js', 'React', 'TypeScript', 'Java', 'Spring Boot']
+    },
+    {
+      id: 'cm',
+      company: 'CM Alliance',
+      role: 'Sr. Software Engineer',
+      period: 'May 2023 - Jan 2024',
+      location: 'Remote',
+      achievements: [
+        'Created and designed MongoDB Schema for storing user profiles and event data',
+        'Developed REST APIs using Node.js and MongoDB to serve data to frontend and metaverse view',
+        'Integrated Web3 API with Node.js for enhanced functionality',
+        'Designed and constructed frontend using React JS and Material UI framework',
+        'Implemented RBAC by assigning different roles and restricting access based on user roles',
+        'Containerized application through Docker and Kubernetes for efficient deployment'
+      ],
+      tech: ['React', 'Node.js', 'MongoDB', 'Web3', 'Docker', 'Kubernetes']
+    },
+    {
+      id: 'ntt',
+      company: 'NTT Data',
+      role: 'System Integration Sr. Specialist',
+      period: 'Feb 2022 - Apr 2023',
+      location: 'Remote',
+      achievements: [
+        'Collaborated with designers to create clean interfaces and intuitive interactions',
+        'Led team to deliver complex design projects for corporate clients',
+        'Developed applications using HTML5, CSS3, Bootstrap, jQuery, React JS, NextJS, Node JS',
+        'Applied optimization techniques to reduce page size and load times',
+        'Used WebSockets API for real-time communication',
+        'Ensured accessibility (A11Y) compliance across all screens'
+      ],
+      tech: ['React', 'Next.js', 'Node.js', 'WebSockets', 'Bootstrap']
+    },
+    {
+      id: 'techm',
+      company: 'Tech Mahindra',
+      role: 'Senior Software Engineer',
+      period: 'Jun 2019 - Feb 2022',
+      location: 'India',
+      achievements: [
+        'Developed mobile and web applications using Ionic, React JS, Angular, and Cordova',
+        'Led development of new features and UI components ensuring accessibility compliance',
+        'Deployed applications to both iOS and Android platforms via App Store and Play Store',
+        'Developed and maintained web and mobile applications for Telecom and E-commerce sectors',
+        'Implemented real-time communication using WebSockets API'
+      ],
+      tech: ['React', 'Angular', 'Ionic', 'Cordova', 'iOS', 'Android']
+    }
+  ];
 
-        btn.classList.add('active');
-
-        const company = btn.getAttribute('data-company');
-        const targetItem = document.querySelector(`.experience-item[data-company="${company}"]`);
-        if (targetItem) {
-          targetItem.classList.add('active');
-        }
-      });
-    });
-  }, []);
+  const activeExperience = experiences.find(exp => exp.id === activeTab) || experiences[0];
 
   return (
     <section id="experience">
       <div className="section-number">02.</div>
       <div className="section-content">
         <h2 className="section-title">Where I've Worked</h2>
-        <div className="experience-container">
+        <div className="experience-wrapper">
           <div className="experience-tabs">
-            <button className="tab-btn" data-company="boa">Bank of America</button>
-            <button className="tab-btn" data-company="cm">CM Alliance</button>
-            <button className="tab-btn" data-company="ntt">NTT Data</button>
-            <button className="tab-btn" data-company="techm">Tech Mahindra</button>
+            {experiences.map((exp, index) => (
+              <button
+                key={exp.id}
+                className={`exp-tab ${activeTab === exp.id ? 'active' : ''}`}
+                onClick={() => setActiveTab(exp.id)}
+                style={{ '--tab-index': index } as React.CSSProperties}
+              >
+                {exp.company}
+              </button>
+            ))}
+            <div 
+              className="tab-indicator"
+              style={{ 
+                transform: `translateY(calc(${experiences.findIndex(e => e.id === activeTab)} * 100%))` 
+              }}
+            />
           </div>
-          <div className="experience-content">
-            <div className="experience-item" data-company="boa">
-              <h3>Sr. Software Engineer <span>@ Bank of America</span></h3>
-              {/* <p className="experience-date">February 2024 - March 2025</p> */}
-              <ul>
-                <li>Developed bank's internal web-based application for performance monitoring and reporting with approval mechanisms</li>
-                <li>Designed and implemented accessible Next.js, React JS and TypeScript components for multiple screens</li>
-                <li>Developed and integrated REST APIs in Java Spring Boot from multiple third-party sources</li>
-                <li>Implemented roles mechanism to manage user approval access and authorization</li>
-                <li>Ensured 100% AA compliance and WCAG 2.2 accessibility standards</li>
-                <li>Managed deployments using Ansible and code pipelines, reducing manual errors</li>
-              </ul>
+          <div className="experience-panel">
+            <div className="exp-header">
+              <div>
+                <h3 className="exp-role">
+                  {activeExperience.role} 
+                  <span className="exp-company"> @ {activeExperience.company}</span>
+                </h3>
+                <p className="exp-period">{activeExperience.period}</p>
+              </div>
+              <div className="exp-tech">
+                {activeExperience.tech.map(tech => (
+                  <span key={tech} className="tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
-            <div className="experience-item" data-company="cm">
-              <h3>Sr. Software Engineer <span>@ CM Alliance</span></h3>
-              {/* <p className="experience-date">May 2023 - January 2024</p> */}
-              <ul>
-                <li>Created and designed MongoDB Schema for storing user profiles and event data</li>
-                <li>Developed REST APIs using Node.js and MongoDB to serve data to frontend and metaverse view</li>
-                <li>Integrated Web3 API with Node.js for enhanced functionality</li>
-                <li>Designed and constructed frontend using React JS and Material UI framework</li>
-                <li>Implemented RBAC by assigning different roles and restricting access based on user roles</li>
-                <li>Containerized application through Docker and Kubernetes for efficient deployment</li>
-              </ul>
-            </div>
-            <div className="experience-item" data-company="ntt">
-              <h3>System Integration Senior Specialist <span>@ NTT Data Global US</span></h3>
-              {/* <p className="experience-date">February 2022 - April 2023</p> */}
-              <ul>
-                <li>Collaborated with designers to create clean interfaces and intuitive interactions</li>
-                <li>Led team to deliver complex design projects for corporate clients</li>
-                <li>Developed applications using HTML5, CSS3, Bootstrap, jQuery, React JS, NextJS, Node JS</li>
-                <li>Applied optimization techniques to reduce page size and load times</li>
-                <li>Used WebSockets API for real-time communication</li>
-                <li>Ensured accessibility (A11Y) compliance across all screens</li>
-              </ul>
-            </div>
-            <div className="experience-item" data-company="techm">
-              <h3>Senior Software Engineer <span>@ Tech Mahindra</span></h3>
-              {/* <p className="experience-date">June 2019 - February 2022</p> */}
-              <ul>
-                <li>Developed mobile and web applications using Ionic, React JS, Angular, and Cordova</li>
-                <li>Led development of new features and UI components ensuring accessibility compliance</li>
-                <li>Deployed applications to both iOS and Android platforms via App Store and Play Store</li>
-                <li>Developed and maintained web and mobile applications for Telecom and E-commerce sectors</li>
-                <li>Implemented real-time communication using WebSockets API</li>
-              </ul>
-            </div>
+            <ul className="exp-achievements">
+              {activeExperience.achievements.map((achievement, i) => (
+                <li key={i}>{achievement}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
