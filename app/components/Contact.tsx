@@ -268,7 +268,7 @@ export default function Contact() {
               </div>
               <div className="contact-item">
                 <i className="fas fa-phone"></i>
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (609) 255-4615</span>
               </div>
               {/* <div className="contact-item">
                 <i className="fas fa-map-marker-alt"></i>
@@ -277,7 +277,7 @@ export default function Contact() {
             </div>
             <div className="contact-actions">
               <a 
-                href="https://wa.me/15551234567?text=Hi%20Abhishek,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." 
+                href="https://wa.me/16092554615?text=Hi%20Abhay,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." 
                 className="whatsapp-btn"
                 target="_blank"
                 rel="noopener noreferrer"
